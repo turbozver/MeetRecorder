@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet Recorder</title>
+    <link rel="icon" href="icons/favicon.png">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <header class="app-header">
+        <button id="settingsBtn" class="icon-button" type="button" title="Settings">&#9881;</button>
+        <div class="title-block">
+            <h1>Meet Recorder</h1>
+            <p id="status">Idle</p>
+        </div>
+    </header>
+
+    <main id="mainView" class="view">
+        <section class="panel">
+            <label class="field">
+                <span>Format</span>
+                <select id="format">
+                    <option value="mp4">MP4 if supported</option>
+                    <option value="webm" selected>WebM</option>
+                </select>
+            </label>
+            <button id="start" type="button">Start Recording</button>
+            <button id="stop" type="button">Stop Recording</button>
+            <p id="hint">Microphone permission and recovery are in Settings. If the save dialog is closed, use Save Recovered Recording there.</p>
+        </section>
+    </main>
+
+    <main id="settingsView" class="view hidden">
+        <section class="panel settings-panel">
+            <div class="section-title">
+                <h2>Settings</h2>
+            </div>
+
+            <div class="settings-stack">
+                <div class="settings-block">
+                    <div class="settings-block-title">
+                        <strong>About</strong>
+                    </div>
+                    <div class="settings-links">
+                        <a class="link-card" href="https://github.com/turbozver/MeetRecorder" target="_blank" rel="noreferrer">
+                            <span class="link-icon github-icon" aria-hidden="true"></span>
+                            <span><strong>GitHub</strong></span>
+                        </a>
+                        <a class="link-card" href="mailto:turbozver24@gmail.com" target="_blank" rel="noreferrer">
+                            <span class="link-icon mail-icon" aria-hidden="true"></span>
+                            <span><strong>Contact</strong><small>turbozver24@gmail.com</small></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="settings-block">
+                    <div class="settings-block-title">
+                        <strong>Recovery</strong>
+                        <span>Saved chunks stay available if the save dialog is closed or canceled.</span>
+                    </div>
+                    <div class="settings-actions">
+                        <button id="recoverSettings" type="button">Save Recovered Recording</button>
+                        <button id="micAccessSettings" type="button">Request Microphone Access</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="popup.js"></script>
+</body>
+</html>
